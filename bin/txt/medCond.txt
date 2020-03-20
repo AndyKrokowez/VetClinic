@@ -1,0 +1,186 @@
+Water Allergy
+Carrot Allergy
+Acariasis
+African Horse Sickness
+African Swine Fever
+Aino Disease
+Akabane
+Amblyomma hebraeum
+Amblyomma variegatum
+American Cattle Tick
+Anthrax
+Aujeszky’s Disease
+Avian Influenza
+Avian Mycoplasmosis
+Bartonellosis
+Cat Scratch Disease
+Baylisascariasis
+Blue Eye Disease
+Bluetongue
+Boophilus annulatus
+Boophilus microplus
+Botulism
+Bovine Babesiosis
+Bovine Ephemeral Fever
+Bovine Spongiform Encephalopathy
+Bovine Tuberculosis
+Brown Ear Tick
+Brucella abortus
+Brucella canis
+Brucella melitensis
+Brucella ovis
+Brucella suis
+Brucellosis
+Brucellosis (Marine Mammals)
+Campylobacteriosis
+Canine Influenza
+Caprine Arthritis and Encephalitis
+Cat Scratch Disease
+Cattle Fever
+Bovine Babesiosis
+Chagas (Trypanosomiasis-American)
+Chlamydiosis (Avian)
+Chlamydiosis (Mammalian)
+Chronic Wasting Disease
+Classical Swine Fever
+Coccidioidomycosis
+Contagious Agalactia
+Contagious Bovine Pleuropneumonia
+Contagious Caprine Pleuropneumonia
+Contagious Ecthyma
+Contagious Equine Metritis
+Coxiellosis
+Crimean-Congo Hemorrhagic Fever
+Cryptococcosis
+Cryptosporidiosis
+Cysticercosis
+Dermatophilosis
+Dermatophytosis
+Dourine
+Eastern Equine Encephalomyelitis
+Ebola Virus Disease
+Echinococcosis
+Egg Drop Syndrome
+Ehrlichiosis
+Enterovirus Encephalomyelitis
+Teschovirus Encephalomyelitis
+Epizootic Hematopoietic Necrosis
+Epizootic Hemorrhagic Disease
+Epizootic Lymphangitis
+Equine Babesiosis
+Equine Piroplasmosis
+Equine Encephalitides
+Equine Infectious Anemia
+Equine Piroplasmosis
+Equine Viral Arteritis
+Escherichia coli 0157:H7
+Exotic Ticks
+Feline Spongiform Encephalopathy
+Foot and Mouth Disease
+Fowl Typhoid and Pullorum Disease
+Getah Virus
+Giardiasis
+Glanders
+Hantavirus
+Heartwater
+Hemorrhagic Septicemia
+Hendra
+Hippobosca longipennis
+Hookworms
+Infectious Hematopoietic Necrosis
+Infectious Salmon Anemia
+Influenza
+Ixodes ricinus
+Japanese Encephalitis
+Johne's Disease
+Larva Migrans
+Leishmaniasis
+Leptospirosis
+Listeriosis
+Louping Ill
+Lumpy Skin Disease
+Lyme Disease
+Lymphocytic Choriomeningitis
+Mad Cow Disease
+Bovine Spongiform Encephalopathy
+Maedi–Visna
+Malignant Catarrhal Fever
+Mange
+Marburg Virus Disease
+Melioidosis
+Menangle
+Methicillin Resistant Staphylococcus aureus
+Monkeypox
+Mycobacteriosis
+Mycoplasma gallisepticum
+Nairobi Sheep Disease
+Newcastle Disease
+Nipah
+Oncorhynchus masou Virus Disease
+Orf
+Ovine Pulmonary Adenocarcinoma
+Parafilariasis
+Paratuberculosis
+Peste des Petits Ruminants
+Plague
+Pseudocowpox
+Pseudorabies
+Psittacosis
+Psoroptes ovis
+Rabbit Calicivirus Disease
+Rabbit Hemorrhagic Disease
+Rabbit Hemorrhagic Disease
+Rabies
+Raccoon Roundworm
+Rat Bite Fever
+Rhipicephalus (Boophilus) annulatus
+Rhipicephalus (Boophilus) microplus
+Rhipicephalus appendiculatus
+Rift Valley Fever
+Rinderpest
+Ringworm
+Dermatophytosis
+Rocky Mountain Spotted Fever
+Roundworm Infestation
+Toxocariasis
+Salmonella (Nontyphoidal)
+Salmonella (Reptile-associated)
+Salmonella Abortusovis
+Sarcocystosis
+Scabies
+Scrapie
+Screwworm Myiasis
+Sheep and Goat Pox
+Sheep Scab (Psoroptes ovis)
+Sporotrichosis
+Spring Viremia of Carp
+Streptococcosis
+Surra
+Swine Influenza
+Swine Vesicular Disease
+Taenia
+Talfan Disease
+Teschovirus Encephalomyelitis
+Teschen Disease
+Teschovirus Encephalomyelitis
+Teschovirus Encephalomyelitis
+Theileriosis
+Ticks (Exotic)
+Toxocariasis
+Toxoplasmosis
+Transmissible Mink Encephalopathy
+Transmissible Spongiform Encephalopathies
+Trichuriasis
+Tropical Bont Tick
+Amblyomma variegatum
+Trypanosomiasis (African)
+Tularemia
+Typhus Fever
+Valley
+Venezuelan Equine Encephalomyelitis
+Vesicular Stomatitis
+Viral Hemorrhagic Fever (Arenavirus)
+Viral Hemorrhagic Fever (Filovirus)
+Viral Hemorrhagic Septicemia
+Wesselsbron Disease
+West Nile Virus
