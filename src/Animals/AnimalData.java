@@ -13,14 +13,14 @@ public class AnimalData {
 	Random rGen = new Random();
 	ArrayList<String> names = new ArrayList<>();
 	ArrayList<String> medConds = new ArrayList<>();
-	ArrayList<Integer> age = new ArrayList<>();
+	Integer[] age = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 	String[] gender = {"male", "female"};
 	String[] typeAnimal = {"horse", "turtle", "fish", "bird", "dog", "cat", "snake"};
 	int max = 12;
 	int min = 1;
 	int amt = 1000;
 	
-	public void readNames() {
+	public void readNames(int amt) {
 		
 		
 		File file = new File("txt/animal.txt");
@@ -63,20 +63,20 @@ public class AnimalData {
 		
 	}
 	
-	public void genAge(int amt) {
-		int ages;
+//	public void genAge(int amt) {
+//		int ages;
 		
-		while(age.size()< amt) {
-			ages = rGen.nextInt(max-min)+min;
+//		while(age.size() < amt) {
+//			ages = rGen.nextInt(max-min)+min;
 			
-			if(!age.contains(ages)) {
-				age.add(ages);
-			}
+//			if(!age.contains(ages)) {
+//				age.add(ages);
+//			}
 			
-			}
-		System.out.println(age.size()+ "year(s)");
+//			}
+//		System.out.println(age.size()+ "year(s)");
 		
-	}
+//	}
 
 	public ArrayList<Animal> buildAnimals(ArrayList<Animal> animals){
 		
@@ -86,7 +86,7 @@ public class AnimalData {
 			animal.setTypeAnimal(typeAnimal[rGen.nextInt(typeAnimal.length)]);
 			animal.setGender(gender[rGen.nextInt(gender.length)]);
 			animal.setName(names.get(rGen.nextInt(names.size())));
-			animal.setAge(age.get(rGen.nextInt(age.size())));
+			animal.setAge(age[rGen.nextInt(age.length)]);
 			animal.setMedCond(medConds.get(rGen.nextInt(medConds.size())));
 						
 		}

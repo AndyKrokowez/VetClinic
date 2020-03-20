@@ -70,7 +70,7 @@ public class Animal extends AnimalData{
 
 	@Override
 	public String toString() {
-		return "Animal \nType of Animal: " + typeAnimal +"\n"+ "Name: " + name +"\n"+ "Age: " + age +"\n"+ "Gender: " + gender
+		return "Type of Animal: " + typeAnimal +"\n"+ "Name: " + name +"\n"+ "Age: " + age +"\n"+ "Gender: " + gender
 				+"\n"+ "Medical Condiction: " + medCond +"\n ";
 	}
 
