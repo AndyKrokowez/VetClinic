@@ -13,17 +13,18 @@ public class AnimalData {
 	Random rGen = new Random();
 	ArrayList<String> names = new ArrayList<>();
 	ArrayList<String> medConds = new ArrayList<>();
-	Integer[] age = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-	String[] gender = {"male", "female"};
-	String[] typeAnimal = {"horse", "turtle", "fish", "bird", "dog", "cat", "snake"};
+	ArrayList<Integer> age = new ArrayList<>();
+//	Integer[] age = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+	String[] gender = {"Male", "Female"};
+	String[] typeAnimal = {"Horse", "Turtle", "Fish", "Bird", "Dog", "Cat", "Snake"};
 	int max = 12;
 	int min = 1;
 	int amt = 1000;
 	
-	public void readNames(int amt) {
+	public void readNames() {
 		
 		
-		File file = new File("txt/animal.txt");
+		File file = new File("animal.txt");
 		try (BufferedReader br = new BufferedReader(new FileReader(file)))
         {
 
@@ -44,7 +45,7 @@ public class AnimalData {
 	
 	public void readMedCond() {
 		
-		File file = new File("txt/medCond.txt");
+		File file = new File("medCond.txt");
 		try (BufferedReader br = new BufferedReader(new FileReader(file)))
         {
 
@@ -63,20 +64,20 @@ public class AnimalData {
 		
 	}
 	
-//	public void genAge(int amt) {
-//		int ages;
+	public void genAge(int amt) {
+		int ages;
 		
-//		while(age.size() < amt) {
-//			ages = rGen.nextInt(max-min)+min;
+		while(age.size() < amt) {
+			ages = rGen.nextInt(max-min)+min;
 			
-//			if(!age.contains(ages)) {
-//				age.add(ages);
-//			}
+			if(!age.contains(ages)) {
+				age.add(ages);
+			}
 			
-//			}
-//		System.out.println(age.size()+ "year(s)");
+			}
+		System.out.println(age.size()+ " year(s)");
 		
-//	}
+	}
 
 	public ArrayList<Animal> buildAnimals(ArrayList<Animal> animals){
 		
@@ -86,9 +87,10 @@ public class AnimalData {
 			animal.setTypeAnimal(typeAnimal[rGen.nextInt(typeAnimal.length)]);
 			animal.setGender(gender[rGen.nextInt(gender.length)]);
 			animal.setName(names.get(rGen.nextInt(names.size())));
-			animal.setAge(age[rGen.nextInt(age.length)]);
+			animal.setAge(age.get(rGen.nextInt(age.size())));
+//			animal.setAge(age[rGen.nextInt(age.length)]);
 			animal.setMedCond(medConds.get(rGen.nextInt(medConds.size())));
-						
+			animals.add(animal);			
 		}
 		
 		return animals;

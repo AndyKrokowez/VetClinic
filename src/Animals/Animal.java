@@ -1,7 +1,7 @@
 package Animals;
 
 
-public class Animal extends AnimalData{
+public class Animal{
 		
 	private String typeAnimal;
 	private String name;
@@ -70,7 +70,7 @@ public class Animal extends AnimalData{
 
 	@Override
 	public String toString() {
-		return "Type of Animal: " + typeAnimal +"\n"+ "Name: " + name +"\n"+ "Age: " + age +"\n"+ "Gender: " + gender
+		return "Type of Animal: " + typeAnimal +"\n"+ "Name: " + name +"\n"+ "Age: " + age + " year(s)" + "\n"+ "Gender: " + gender
 				+"\n"+ "Medical Condiction: " + medCond +"\n ";
 	}
 
