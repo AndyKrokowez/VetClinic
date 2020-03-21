@@ -1,33 +1,32 @@
 package Animals;
 
+public class Animal {
 
-public class Animal{
-		
 	private String typeAnimal;
 	private String name;
 	private int age;
 	private String gender;
 	private String medCond;
-	
-	//Constructors
 
-	//basic constructor
-	public Animal() {}
+	// Constructors
 
-	//class constructor
+	// basic constructor
+	public Animal() {
+	}
+
+	// class constructor
 	public Animal(String typeAnimal, String name, int age, String gender, String medCond) {
-		
+
 		this.typeAnimal = typeAnimal;
 		this.name = name;
 		this.age = age;
 		this.gender = gender;
 		this.medCond = medCond;
-		
-		
+
 	}
 
-	//Getters and Setters
-	
+	// Getters and Setters
+
 	public String getTypeAnimal() {
 		return typeAnimal;
 	}
@@ -35,7 +34,7 @@ public class Animal{
 	public void setTypeAnimal(String typeAnimal) {
 		this.typeAnimal = typeAnimal;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -70,12 +69,8 @@ public class Animal{
 
 	@Override
 	public String toString() {
-		return "Type of Animal: " + typeAnimal +"\n"+ "Name: " + name +"\n"+ "Age: " + age + " year(s)" + "\n"+ "Gender: " + gender
-				+"\n"+ "Medical Condiction: " + medCond +"\n ";
+		return "Type of Animal: " + typeAnimal + "\n" + "Name: " + name + "\n" + "Age: " + age + " year(s)" + "\n"
+				+ "Gender: " + gender + "\n" + "Medical Condiction: " + medCond + "\n ";
 	}
-
-	
-	
-	
 
 }
