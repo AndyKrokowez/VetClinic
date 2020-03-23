@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 import Animals.Animal;
 import Animals.AnimalData;
+import Staff.AdmStaff;
 import Staff.MedicalStaff;
 import Staff.StaffData;
 
@@ -27,21 +28,31 @@ public class MainMenu {
 			System.out.println(a.toString());
 		}
 
-	
-	
-	
-	// creating Medical Staff
+		// creating Medical Staff
 
-			StaffData sD = new StaffData();
-			sD.genId();
-			sD.readName();
-			sD.genSalary();
-			ArrayList<MedicalStaff> medStaff = new ArrayList<>();
-			medStaff = sD.buildMedStaff(medStaff);
+		StaffData sD = new StaffData();
+		sD.genId();
+		sD.readName();
+		sD.genSalary();
+		ArrayList<MedicalStaff> medStaff = new ArrayList<>();
+		medStaff = sD.buildMedStaff(medStaff);
+		for (MedicalStaff b : medStaff) {
+			System.out.println(b.toString());
+//		}
 
-			for (MedicalStaff b : medStaff) {
-				System.out.println(b.toString());
+			// creating Adm Staff
+
+//		StaffData sData = new StaffData();
+//		sData.genId();
+//		sData.readName();
+//		sData.genSalary();
+			ArrayList<AdmStaff> staff = new ArrayList<>();
+			staff = sD.buildStaff(staff);
+
+			for (AdmStaff c : staff) {
+				System.out.println(c.toString());
 			}
 
 		}
+	}
 }

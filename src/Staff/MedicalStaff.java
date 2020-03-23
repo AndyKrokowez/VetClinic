@@ -1,23 +1,27 @@
 package Staff;
 
+import java.util.Random;
+
 public class MedicalStaff extends StaffData {
 
 	public Integer id;
 	public String name;
-	public String medFunc;
+//	public String medFunc;
 	public Integer salary;
+	String[] medFunc = { "Nurse", "Veterinarian", "Trainee Vet", "Groomer", "Anesthetist" };
 
 	public MedicalStaff() {
 
 	}
 
-	public MedicalStaff(Integer id, String name, String medFun, Integer salary, String medFunc) {
+	public MedicalStaff(Integer id, String name, String medFun, Integer salary, String[] medFunc) {
 		this.id = id;
 		this.name = name;
 		this.medFunc = medFunc;
 		this.salary = salary;
+		
 	}
-
+	
 	public Integer getId() {
 		return id;
 	}
@@ -34,14 +38,7 @@ public class MedicalStaff extends StaffData {
 		this.name = name;
 	}
 
-	public String getMedFunc() {
-		return medFunc;
-	}
-
-	public void setMedFunc(String medFun) {
-		this.medFunc = medFun;
-	}
-
+	
 	public Integer getSalary() {
 		return salary;
 	}
@@ -52,7 +49,7 @@ public class MedicalStaff extends StaffData {
 
 	@Override
 	public String toString() {
-		return "Medical Staff \nID: " + id + "\n" + "Name: " + name + "\n" + "Function: " + medFunc + "\n"
+		return "Medical Staff \nID: " + id + "\n" + "Name: " + name + "\n" + "Function: " + (medFunc[new Random().nextInt(medFunc.length)]) + "\n"
 				+ "Salary: E$ " + salary + ".00"+"\n";
 	}
 

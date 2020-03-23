@@ -61,7 +61,7 @@ public class AnimalData {
 	public void genAge(int amt) {
 		int ages;
 
-		while (age.size() < amt) {
+		while (age.size() <= amt) {
 			ages = rGen.nextInt(max - min) + min;
 
 			if (!age.contains(ages)) {
@@ -75,7 +75,7 @@ public class AnimalData {
 
 	public ArrayList<Animal> buildAnimals(ArrayList<Animal> animals) {
 
-		while (animals.size() < amt) {
+		while (animals.size() <= amt) {
 
 			Animal animal = new Animal();
 			animal.setTypeAnimal(typeAnimal[rGen.nextInt(typeAnimal.length)]);
