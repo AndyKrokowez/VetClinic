@@ -26,6 +26,7 @@ public class MainMenu {
 
 		for (Animal a : animals) {
 			System.out.println(a.toString());
+
 		}
 
 		// creating Medical Staff
@@ -51,8 +52,11 @@ public class MainMenu {
 
 			for (AdmStaff c : staff) {
 				System.out.println(c.toString());
-			}
 
+			}
+			System.out.println("number of Animals: " + animals.size());
+			System.out.println("number of Medical Staff: " + medStaff.size());
+			System.out.println("number of Adm Staff: " + staff.size());
 		}
 	}
 }

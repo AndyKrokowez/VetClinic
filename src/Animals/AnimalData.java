@@ -85,6 +85,8 @@ public class AnimalData {
 //			animal.setAge(age[rGen.nextInt(age.length)]);
 			animal.setMedCond(medConds.get(rGen.nextInt(medConds.size())));
 			animals.add(animal);
+			
+			
 		}
 
 		return animals;
