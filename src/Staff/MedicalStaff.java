@@ -6,9 +6,8 @@ public class MedicalStaff extends StaffData {
 
 	public Integer id;
 	public String name;
-//	public String medFunc;
 	public Integer salary;
-	String[] medFunc = { "Nurse", "Veterinarian", "Trainee Vet", "Groomer", "Anesthetist" };
+	String[] medFunc = { "Nurse", "Groomer", "Anesthetist" };
 
 	public MedicalStaff() {
 

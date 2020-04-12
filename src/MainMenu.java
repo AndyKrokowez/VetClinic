@@ -5,6 +5,7 @@ import Animals.AnimalData;
 import Staff.AdmStaff;
 import Staff.MedicalStaff;
 import Staff.StaffData;
+import Staff.Veterinarian;
 
 public class MainMenu {
 
@@ -39,14 +40,26 @@ public class MainMenu {
 		medStaff = sD.buildMedStaff(medStaff);
 		for (MedicalStaff b : medStaff) {
 			System.out.println(b.toString());
-//		}
+		}
+		
+		// creating Veterinarians
+
+				StaffData vet = new StaffData();
+				vet.genId();
+				vet.readName();
+				vet.genSalary();
+				ArrayList<Veterinarian> veterinarian = new ArrayList<>();
+				veterinarian = vet.buildDoctor(veterinarian);
+				for (Veterinarian d : veterinarian) {
+					System.out.println(d.toString());
+				}
 
 			// creating Adm Staff
 
-//		StaffData sData = new StaffData();
-//		sData.genId();
-//		sData.readName();
-//		sData.genSalary();
+		StaffData sData = new StaffData();
+		sData.genId();
+		sData.readName();
+		sData.genSalary();
 			ArrayList<AdmStaff> staff = new ArrayList<>();
 			staff = sD.buildStaff(staff);
 
@@ -56,7 +69,7 @@ public class MainMenu {
 			}
 			System.out.println("number of Animals: " + animals.size());
 			System.out.println("number of Medical Staff: " + medStaff.size());
+			System.out.println("number of Veterinarians: " + veterinarian.size());
 			System.out.println("number of Adm Staff: " + staff.size());
 		}
 	}
-}

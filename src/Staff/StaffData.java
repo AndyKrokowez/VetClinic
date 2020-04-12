@@ -12,8 +12,6 @@ public class StaffData {
 	Random rGen = new Random();
 	ArrayList<Integer> id = new ArrayList<>();
 	ArrayList<String> names = new ArrayList<>();
-//	String[] medFunc = { "Nurse", "Veterinarian", "Trainee Vet", "Groomer", "Anesthetist" };
-//	String[] admFunc = { "Receptionist", "Cleaner", "IT", "Accountant" };
 	ArrayList<Integer> salary = new ArrayList<>();
 	int max = 12345;
 	int min = 1234;
@@ -38,16 +36,16 @@ public class StaffData {
 	}
 
 	public void genId() {
-		int numId = rGen.nextInt(50);
+		int numId = rGen.nextInt(40);
 
 		while (id.size() < amt) {
-			numId = rGen.nextInt(50);
+			numId = rGen.nextInt(40);
 
 			if (!id.contains(numId)) {
 				id.add(numId);
 			}
 
-	//		System.out.println(id + "unique ID number created");
+			// System.out.println(id + "unique ID number created");
 
 		}
 
@@ -63,7 +61,7 @@ public class StaffData {
 				salary.add(salaries);
 			}
 
-		//	System.out.println(salary.size() + " salary");
+			// System.out.println(salary.size() + " salary");
 
 		}
 
@@ -71,7 +69,7 @@ public class StaffData {
 
 	public ArrayList<MedicalStaff> buildMedStaff(ArrayList<MedicalStaff> medStaff) {
 
-		while (medStaff.size() <= 30) {
+		while (medStaff.size() < 25) {
 
 			MedicalStaff medicalStaff = new MedicalStaff();
 			medicalStaff.setId(id.get(rGen.nextInt(id.size())));
@@ -83,15 +81,29 @@ public class StaffData {
 
 		return medStaff;
 	}
-	
+
+	public ArrayList<Veterinarian> buildDoctor(ArrayList<Veterinarian> doctor) {
+
+		while (doctor.size() < 5) {
+
+			Veterinarian veterinarian = new Veterinarian();
+			veterinarian.setId(id.get(rGen.nextInt(id.size())));
+			veterinarian.setName(names.get(rGen.nextInt(names.size())));
+//			medicalStaff.setMedFunc(medFunc[rGen.nextInt(medFunc.length)]);
+			veterinarian.setSalary(salary.get(rGen.nextInt(salary.size())));
+			doctor.add(veterinarian);
+		}
+
+		return doctor;
+	}
+
 	public ArrayList<AdmStaff> buildStaff(ArrayList<AdmStaff> staff) {
 
-		while (staff.size() <= 10) {
+		while (staff.size() < 10) {
 
 			AdmStaff admStaff = new AdmStaff();
 			admStaff.setId(id.get(rGen.nextInt(id.size())));
 			admStaff.setName(names.get(rGen.nextInt(names.size())));
-//			medicalStaff.setMedFunc(medFunc[rGen.nextInt(medFunc.length)]);
 			admStaff.setSalary(salary.get(rGen.nextInt(salary.size())));
 			staff.add(admStaff);
 		}

@@ -15,7 +15,7 @@ public class AnimalData {
 	ArrayList<Integer> age = new ArrayList<>();
 //	Integer[] age = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 	String[] gender = { "Male", "Female" };
-	String[] typeAnimal = { "Horse", "Turtle", "Fish", "Bird", "Dog", "Cat", "Snake" };
+	String[] typeAnimal = { "Horse", "Turtle", "Fish", "Bird", "Dog", "Cat", "Snake", "Rodent" };
 	int max = 12;
 	int min = 1;
 	int amt = 1000;
@@ -61,7 +61,7 @@ public class AnimalData {
 	public void genAge(int amt) {
 		int ages;
 
-		while (age.size() <= amt) {
+		while (age.size() < amt) {
 			ages = rGen.nextInt(max - min) + min;
 
 			if (!age.contains(ages)) {
@@ -75,7 +75,7 @@ public class AnimalData {
 
 	public ArrayList<Animal> buildAnimals(ArrayList<Animal> animals) {
 
-		while (animals.size() <= amt) {
+		while (animals.size() < amt) {
 
 			Animal animal = new Animal();
 			animal.setTypeAnimal(typeAnimal[rGen.nextInt(typeAnimal.length)]);
