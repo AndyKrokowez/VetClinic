@@ -11,11 +11,6 @@ public class MainMenu {
 
 	public static void main(String[] args) {
 
-//		 Animal a1 = new Animal();  
-//		 a1.setAge(2);
-
-//		 System.out.println(a1.toString());
-
 		// creating 1000 animals
 
 		AnimalData aD = new AnimalData();
