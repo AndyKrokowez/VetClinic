@@ -14,6 +14,7 @@ public class MainMenu {
 
 		String continuing = "allData";
 		int option = 0;
+		int option2 =0;
 
 		do {
 
@@ -30,8 +31,8 @@ public class MainMenu {
 			System.out.println("SELECT MENU (0-9)");
 			System.out.print("-> ");
 
-			Scanner sc = new Scanner(System.in);
-			option = sc.nextInt();
+			Scanner scanner = new Scanner(System.in);
+			option = scanner.nextInt();
 
 			// second instance of scanner
 			Scanner sc1 = new Scanner(System.in);
@@ -79,12 +80,39 @@ public class MainMenu {
 			}
 
 			case 2: {
-				System.out.println("To be done");
+				System.out.println("11. LIST ALL VETERINARIANS");
+				System.out.println("21. LIST ALL NURSES");
+				
+				Scanner scanner3 = new Scanner(System.in);
+				option2 = scanner3.nextInt();
 
+				switch (option2) {
+				
+				case 11:{
+					System.out.println("To be done");
+					
+					continuing = "allData";
+					break;
+				}
+				
+				case 21:{
+					System.out.println("To be done");
+					
+					continuing = "allData";
+					break;
+				}
+				
+				}
+				
+				
+					
+					
 				continuing = "allData";
 				break;
-			}
-
+				}
+				
+				
+			
 			case 3: {
 				// creating Adm Staff
 
