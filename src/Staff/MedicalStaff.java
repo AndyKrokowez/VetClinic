@@ -1,55 +1,43 @@
 package Staff;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
-public class MedicalStaff extends StaffData {
+import Animals.Animal;
 
-	public Integer id;
-	public String name;
-	public Integer salary;
-	String[] medFunc = { "Nurse", "Groomer", "Anesthetist"};
+public class MedicalStaff extends StaffData {
+	
+	private int AnimalOrder;
+	private List<Animal> Animals = new ArrayList<Animal>();
+
+	public void passNextAnimal() {
+		this.AnimalOrder = this.AnimalOrder + 1;
+	}	
+	
+	public void addAnimal(Animal animal) {
+		this.Animals.add(animal);
+	}
+	
+	public List<Animal> getAnimals(){
+		return this.Animals;
+	}
+	
+	public List<Animal> getAnimalsOrdered(){
+		return this.Animals.subList(this.AnimalOrder, Animals.size());
+	}
+	
+	String[] medFunc = { "Nurse", "Groomer", "Anesthetist", "Veterinarian Surgeon", "Trainee Vet"};
 
 	public MedicalStaff() {
-
-	}
-
-	public MedicalStaff(Integer id, String name, String medFun, Integer salary, String[] medFunc) {
-		this.id = id;
-		this.name = name;
-		this.medFunc = medFunc;
-		this.salary = salary;
-		
-	}
+		this.setType(medFunc[new Random().nextInt(medFunc.length)]);
+		this.AnimalOrder = 1;
+	}	
 	
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	
-	public Integer getSalary() {
-		return salary;
-	}
-
-	public void setSalary(Integer salary) {
-		this.salary = salary;
-	}
-
 	@Override
 	public String toString() {
-		return "Medical Staff \nID: " + id + "\n" + "Name: " + name + "\n" + "Function: " + (medFunc[new Random().nextInt(medFunc.length)]) + "\n"
-				+ "Salary: E$ " + salary + ".00"+"\n";
+		return "Medical Staff \nID: " + getId() + "\n" + "Name: " + getName() + "\n" + "Function: " + getType() + "\n"
+				+ "Salary: E$ " + getSalary() + ".00"+"\n";
 	}
 
 }

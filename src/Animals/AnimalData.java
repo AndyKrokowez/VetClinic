@@ -69,8 +69,6 @@ public class AnimalData {
 			}
 
 		}
-		System.out.println(age.size() + " year(s)");
-
 	}
 
 	public ArrayList<Animal> buildAnimals(ArrayList<Animal> animals) {

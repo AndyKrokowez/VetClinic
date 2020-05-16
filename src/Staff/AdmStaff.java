@@ -3,55 +3,36 @@ package Staff;
 import java.util.Random;
 
 public class AdmStaff extends StaffData {
-
-	public Integer id;
-	public String name;
-//	public String medFunc;
-	public Integer salary;
-	String[] admFunc = { "Receptionist", "Cleaner", "IT", "Accountant" };
+		
+	String[] admFunc = { "Receptionist", "Cleaner", "IT", "Accountant" };	
 	
 	public AdmStaff() {
-
-	}
-
-	public AdmStaff(Integer id, String name, String medFun, Integer salary, String[] admFunc) {
-		this.id = id;
-		this.name = name;
-		this.admFunc = admFunc;
-		this.salary = salary;
-		
-	}
+		this.setType(admFunc[new Random().nextInt(admFunc.length)]);
+	}	
 	
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	
-	public Integer getSalary() {
-		return salary;
-	}
-
-	public void setSalary(Integer salary) {
-		this.salary = salary;
+	public String[] getTasks() {
+		switch (getType()) {
+		case "Receptionist": {
+			return new String[] {"Making Phone Calls", "Filing", "Greet clients and visitors" };			
+		}
+		case "Cleaner": {
+			return new String[] {"Clean facility areas", "dusting", "sweeping", "mopping"};			
+		}
+		case "IT": {
+			return new String[] {"Installing and configuring computer software", "installing printers", "installing scanner", "fix any issue related to any tech device"};			
+		}
+		case "Accountant": {
+			return new String[] {"preparing accounts and tax returns", "administering payrolls", "controlling income and expenditure" };			
+		}		
+		}
+		return null;
 	}
 
 	@Override
 	public String toString() {
-		return "Adm Staff \nID: " + id + "\n" + "Name: " + name + "\n" + "Function: " + (admFunc[new Random().nextInt(admFunc.length)]) + "\n"
-				+ "Salary: E$ " + salary + ".00"+"\n";
+		return "Adm Staff \nID: " + getId() + "\n" + "Name: " + getName() + "\n" + "Type: " + getType()  + "\n"
+				+ "Salary: E$ " + getSalary() + ".00"+"\n" + "Tasks: " + String.join(", ",getTasks()) +"\n";
 	}
-
+	//(admFunc[new Random().nextInt(admFunc.length)])
 }
 
