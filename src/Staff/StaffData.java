@@ -48,7 +48,7 @@ public class StaffData {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
-	
+
 	public Integer getSalary() {
 		return salary;
 	}
@@ -82,7 +82,7 @@ public class StaffData {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	public void readSurname() {
 
 		File file = new File("surname.txt");
@@ -91,7 +91,7 @@ public class StaffData {
 			String currentLine;
 
 			while ((currentLine = sN.readLine()) != null) {
-				surnames.add(currentLine);
+				names.add(currentLine);
 			}
 
 		}
@@ -100,7 +100,6 @@ public class StaffData {
 			System.out.println(e.getMessage());
 		}
 	}
-
 	public void genId() {
 		int numId = rGen.nextInt(40);
 
@@ -135,7 +134,7 @@ public class StaffData {
 
 	public List<MedicalStaff> buildMedStaff(List<MedicalStaff> medStaff) {
 
-		while (medStaff.size() <= 30) {
+		while (medStaff.size() < 30) {
 
 			MedicalStaff medicalStaff = new MedicalStaff();
 			medicalStaff.setId(idList.get(rGen.nextInt(idList.size())));
@@ -148,11 +147,9 @@ public class StaffData {
 		return medStaff;
 	}
 
-	
-
 	public List<AdmStaff> buildStaff(List<AdmStaff> admin) {
 
-		while (admin.size() <= 10) {
+		while (admin.size() < 10) {
 
 			AdmStaff admStaff = new AdmStaff();
 			admStaff.setId(idList.get(rGen.nextInt(idList.size())));

@@ -36,7 +36,7 @@ public class MedicalStaff extends StaffData {
 	
 	@Override
 	public String toString() {
-		return "Medical Staff \nID: " + getId() + "\n" + "Name: " + getName() +" " + getSurname() + "\n" + "Function: " + getType() + "\n"
+		return "Medical Staff \nID: " + getId() + "\n" + "Name: " + getName() + " " + getSurname() + "\n" + "Function: " + getType() + "\n"
 				+ "Salary: E$ " + getSalary() + ".00"+"\n";
 	}
 
