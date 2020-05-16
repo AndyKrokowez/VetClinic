@@ -11,7 +11,6 @@ import Staff.AdmStaff;
 import Staff.MedicalStaff;
 import Staff.StaffData;
 
-
 public class MainMenu {
 
 	public static void main(String[] args) {
