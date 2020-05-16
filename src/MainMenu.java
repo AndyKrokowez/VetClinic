@@ -206,7 +206,7 @@ public class MainMenu {
 		System.out.println("7. SEARCH BY ANIMAL NAME");
 		System.out.println("8. LIST ALL ANIMALS ASSIGNED TO MEDICAL STAFF");
 		System.out.println("9. LIST TREATMENT ORDER OF THE ANIMALS ASSIGNED TO PARTICULAR MEDICAL STAFF");
-		System.out.println("10. For a given member of the medical staff, pass to the next pet. ");
+		System.out.println("10. FOR A GIVEN MEMBER OF THE MEDICAL STAFF, PASS TO THE NEXT PET TO BE TREATED.");
 		System.out.println("0. EXIT");
 		System.out.println("SELECT MENU (0-9)");
 		System.out.print("-> ");
