@@ -30,7 +30,7 @@ public class AdmStaff extends StaffData {
 
 	@Override
 	public String toString() {
-		return "Adm Staff \nID: " + getId() + "\n" + "Name: " + getName() +  " " + getSurname() + "\n" + "Type: " + getType()  + "\n"
+		return "Adm Staff \nID: " + getId() + "\n" + "Name: " + getFullName() + "\n" + "Type: " + getType()  + "\n"
 				+ "Salary: E$ " + getSalary() + ".00"+"\n" + "Tasks: " + String.join(", ",getTasks()) +"\n";
 	}
 	//(admFunc[new Random().nextInt(admFunc.length)])

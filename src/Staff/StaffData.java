@@ -44,6 +44,10 @@ public class StaffData {
 	public String getSurname() {
 		return surname;
 	}
+	
+	public String getFullName() {
+		return name + " " + surname;
+	}
 
 	public void setSurname(String surname) {
 		this.surname = surname;
