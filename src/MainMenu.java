@@ -1,20 +1,43 @@
+import java.util.List;
+import java.util.Random;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Collection;
+import java.util.stream.Collectors;
 
 import Animals.Animal;
 import Animals.AnimalData;
 import Staff.AdmStaff;
 import Staff.MedicalStaff;
 import Staff.StaffData;
-import Staff.Veterinarian;
+
 
 public class MainMenu {
 
 	public static void main(String[] args) {
-
-		String continuing = "allData";
+		StaffData sD = new StaffData();
+		sD.genId();
+		sD.readName();
+		sD.genSalary();
+		List<StaffData>  staff = new ArrayList<StaffData>();
+		List<MedicalStaff> medStaff = new ArrayList<>();
+		medStaff = sD.buildMedStaff(medStaff);		
+		List<AdmStaff> admin = new ArrayList<AdmStaff>();
+		admin = sD.buildStaff(admin);
+		AnimalData aD = new AnimalData();
+		aD.readNames();
+		aD.readMedCond();
+		aD.genAge(10);
+		ArrayList<Animal> animals = new ArrayList<>();
+		animals = aD.buildAnimals(animals);
+		staff.addAll(medStaff);
+		staff.addAll(admin);
+		for (Animal a : animals) {
+			medStaff.get(new Random().nextInt(medStaff.size())).addAnimal(a);			
+		}	
+		boolean continuing = true;
 		int option = 0;
-		int option2 =0;
+		String optionTxt = "";		
 
 		do {
 
@@ -27,182 +50,191 @@ public class MainMenu {
 			System.out.println("7. SEARCH BY ANIMAL NAME");
 			System.out.println("8. LIST ALL ANIMALS ASSIGNED TO MEDICAL STAFF");
 			System.out.println("9. LIST TREATMENT ORDER OF THE ANIMALS ASSIGNED TO PARTICULAR MEDICAL STAFF");
+			System.out.println("10. For a given member of the medical staff, pass to the next pet. ");
 			System.out.println("0. EXIT");
 			System.out.println("SELECT MENU (0-9)");
 			System.out.print("-> ");
 
-			Scanner scanner = new Scanner(System.in);
-			option = scanner.nextInt();
+			Scanner sc = new Scanner(System.in);
+			option = sc.nextInt();
 
 			// second instance of scanner
 			Scanner sc1 = new Scanner(System.in);
 
 			switch (option) {
-			case 1: {
-				// creating Medical Staff
-
-				StaffData sD = new StaffData();
-				sD.genId();
-				sD.readName();
-				sD.genSalary();
-				ArrayList<MedicalStaff> medStaff = new ArrayList<>();
-				medStaff = sD.buildMedStaff(medStaff);
-				for (MedicalStaff b : medStaff) {
-					System.out.println(b.toString());
-				}
-
-				// creating Veterinarians
-
-				StaffData vet = new StaffData();
-				vet.genId();
-				vet.readName();
-				vet.genSalary();
-				ArrayList<Veterinarian> veterinarian = new ArrayList<>();
-				veterinarian = vet.buildDoctor(veterinarian);
-				for (Veterinarian d : veterinarian) {
-					System.out.println(d.toString());
-				}
-				
-				
-				StaffData sData = new StaffData();
-				sData.genId();
-				sData.readName();
-				sData.genSalary();
-				ArrayList<AdmStaff> staff = new ArrayList<>();
-				staff = sData.buildStaff(staff);
-
-				for (AdmStaff c : staff) {
+			case 1: {				
+				for (StaffData c : staff) {
 					System.out.println(c.toString());
-				}
-				continuing = "allData";
+				}						
 				break;
-
+			}
+			case 2: {
+				System.out.println("Please type a category");
+				System.out.print("-> ");
+				optionTxt = sc.next();
+				int index = 0;				
+				for (StaffData c : staff) {
+					if(c.getType().equalsIgnoreCase(optionTxt)) {
+						System.out.println(c.toString());
+						index = index +1;
+					}					
+				}
+				if(index == 0) {
+					System.out.println("No staff was found with that category");
+				}
+				
+				break;
 			}
 
-			case 2: {
-				System.out.println("11. LIST ALL VETERINARIANS");
-				System.out.println("21. LIST ALL NURSES");
-				
-				Scanner scanner3 = new Scanner(System.in);
-				option2 = scanner3.nextInt();
-
-				switch (option2) {
-				
-				case 11:{
-					System.out.println("To be done");
-					
-					continuing = "allData";
-					break;
-				}
-				
-				case 21:{
-					System.out.println("To be done");
-					
-					continuing = "allData";
-					break;
-				}
-				
-				}
-				
-				
-					
-					
-				continuing = "allData";
-				break;
-				}
-				
-				
-			
 			case 3: {
 				// creating Adm Staff
-
-				StaffData sData = new StaffData();
-				sData.genId();
-				sData.readName();
-				sData.genSalary();
-				ArrayList<AdmStaff> staff = new ArrayList<>();
-				staff = sData.buildStaff(staff);
-
-				for (AdmStaff c : staff) {
+				for (AdmStaff c : admin) {
 					System.out.println(c.toString());
-				}
-
-				continuing = "allData";
+				}				
 				break;
-
 			}
 
 			case 4: {
-				System.out.println("To be done");
-				continuing = "allData";
+				System.out.println("Please type a name");
+				System.out.print("-> ");
+				optionTxt = sc.next();
+				int index = 0;	
+				for (StaffData c : staff) {
+					if(c.getName().equalsIgnoreCase(optionTxt)) {
+						System.out.println(c.toString());
+						index = index +1;
+					}					
+				}
+				if(index == 0) {
+					System.out.println("No staff was found with that name");
+				}
 				break;
 			}
-
-			case 5: {
-
-				// creating 1000 animals
-
-				AnimalData aD = new AnimalData();
-				aD.readNames();
-				aD.readMedCond();
-				aD.genAge(10);
-				ArrayList<Animal> animals = new ArrayList<>();
-				animals = aD.buildAnimals(animals);
-
+			case 5: {				
 				for (Animal a : animals) {
 					System.out.println(a.toString());
-
-				}
-				continuing = "allData";
+				}				
 				break;
 			}
-
 			case 6: {
-				System.out.println("To be done");
-				continuing = "allData";
+				System.out.println("Enter a type");
+				System.out.print("-> ");
+				optionTxt = sc.next();
+				int index = 0;	
+				for (Animal a : animals) {
+					if(a.getTypeAnimal().equalsIgnoreCase(optionTxt)) {
+						System.out.println(a.toString());
+						index = index +1;
+					}					
+				}
+				if(index == 0) {
+					System.out.println("No animal was found with that type");
+				}
 				break;
 			}
 
 			case 7: {
-				System.out.println("To be done");
-				continuing = "allData";
+				System.out.println("Please, type a name");
+				System.out.print("-> ");
+				optionTxt = sc.next();
+				int index = 0;	
+				for (Animal a : animals) {
+					if(a.getName().equalsIgnoreCase(optionTxt)) {
+						System.out.println(a.toString());
+						index = index +1;
+					}					
+				}
+				if(index == 0) {
+					System.out.println("No animal was found with that name");
+				}
 				break;
 			}
 
 			case 8: {
-				System.out.println("To be done");
-				continuing = "allData";
+				System.out.println("Please, type the member staff name");
+				System.out.print("-> ");
+				optionTxt = sc.next();
+				int index = 0;	
+				for (MedicalStaff c : medStaff) {
+					if(c.getName().equalsIgnoreCase(optionTxt)) {
+						System.out.println("Medical Staff:" + c.getName() + "\n" + "Function: " + c.getType() + "\n");
+						for (Animal a : c.getAnimals()) {							
+								System.out.println(a.toString());
+								index = index +1;
+						}						
+					}					
+				}
+				
+				if(index == 0) {
+					System.out.println("No animal was found for that Staff Member");
+				}
 				break;
 			}
 
 			case 9: {
-				System.out.println("To be done");
-				continuing = "allData";
+				System.out.println("Please, type the member staff name");
+				System.out.print("-> ");
+				optionTxt = sc.next();
+				int index = 0;	
+				for (MedicalStaff c : medStaff) {
+					if(c.getName().equalsIgnoreCase(optionTxt)) {
+						System.out.println("Medical Staff:" + c.getName() + "\n" + "Function: " + c.getType() + "\n");
+						for (Animal a : c.getAnimalsOrdered()) {
+							System.out.println("Treatment Order number: " + (index + 1) + "\n");
+							System.out.println(a.toString());
+							index = index +1;
+						}						
+					}					
+				}				
+				if(index == 0) {
+					System.out.println("No animal was found for that Staff Member");
+				}
+				break;
+			}
+			case 10:{
+				System.out.println("Please, type the member staff name");
+				System.out.print("-> ");
+				optionTxt = sc.next();
+				int index = 0;	
+				for (MedicalStaff c : medStaff) {
+					if(c.getName().equalsIgnoreCase(optionTxt)) {
+						c.passNextAnimal();
+						System.out.println("Medical Staff:" + c.getName() + "\n" + "Function: " + c.getType() + "\n");
+						for (Animal a : c.getAnimalsOrdered()) {
+							System.out.println("Treatment Order number: " + (index + 1) + "\n");
+							System.out.println(a.toString());
+							index = index +1;
+						}						
+					}					
+				}				
+				if(index == 0) {
+					System.out.println("No animal was found for that Staff Member");
+				}
 				break;
 			}
 
 			case 0: {
 				
-				System.out.println("Do you want exit? (Y/N)");
+				System.out.println("Do you really want exit? (Y/N)");
 				System.out.print("-> ");
-				String option1 = sc1.next();
-				if (option1.equalsIgnoreCase("y")) {
-					continuing = "y";
-					break;
-					
-				} else {
-					
-					continuing = "allData";
-					break;
-				}
-			}
-			
+				optionTxt = sc.next();
+				if (optionTxt.equalsIgnoreCase("y")) {
+					continuing = false;	
+					System.out.println("Thank you for using our app");
+				} 
+				break;
+			}			
 			default: {
 				System.out.println("Invalid option!");
 				break;
 			}
 			}
 			
-		} while (!continuing.equalsIgnoreCase("y"));
+		} while (continuing);
 	}
+	
+	public static void setUp() {
+		
+	}
+
 }
