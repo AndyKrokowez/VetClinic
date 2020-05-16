@@ -208,7 +208,7 @@ public class MainMenu {
 		System.out.println("9. LIST TREATMENT ORDER OF THE ANIMALS ASSIGNED TO PARTICULAR MEDICAL STAFF");
 		System.out.println("10. FOR A GIVEN MEMBER OF THE MEDICAL STAFF, PASS TO THE NEXT PET TO BE TREATED.");
 		System.out.println("0. EXIT");
-		System.out.println("SELECT MENU (0-9)");
+		System.out.println("SELECT MENU (0-10)");
 		System.out.print("-> ");
 	}
 	
