@@ -91,7 +91,7 @@ public class StaffData {
 			String currentLine;
 
 			while ((currentLine = sN.readLine()) != null) {
-				names.add(currentLine);
+				surnames.add(currentLine);
 			}
 
 		}
